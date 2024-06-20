@@ -1,0 +1,2 @@
+# EXRTranslator
+Haiku EXR translator

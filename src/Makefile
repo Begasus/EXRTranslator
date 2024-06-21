@@ -31,11 +31,11 @@ APP_MIME_SIG = x-vnd.Haiku-EXRTranslator
 #	means this Makefile will not work correctly if two source files with the
 #	same name (source.c or source.cpp) are included from different directories.
 #	Also note that spaces in folder names do not work well with this Makefile.
-SRCS = ConfigView.h \
+SRCS = main.cpp \
+	ConfigView.cpp \
 	EXRGamma.cpp \
 	EXRTranslator.cpp \
 	IStreamWrapper.cpp \
-	main.cpp \
 	shared/BaseTranslator.cpp \
 	shared/StreamBuffer.cpp \
 	shared/TranslatorSettings.cpp \
@@ -65,7 +65,8 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS = be Iex-3_2 IlmThread-3_2 Imath-3_1 OpenEXR-3_2 OpenEXRUtil-3_2 translation textencoding localestub $(STDCPPLIBS)
+LIBS = be Iex IlmThread Imath OpenEXR OpenEXRUtil \
+	translation textencoding localestub $(STDCPPLIBS)
 
 #	Specify additional paths to directories following the standard libXXX.so
 #	or libXXX.a naming scheme. You can specify full paths or paths relative
@@ -118,7 +119,7 @@ DEBUGGER :=
 COMPILER_FLAGS =
 
 #	Specify any additional linker flags to be used.
-LINKER_FLAGS =
+LINKER_FLAGS = -Xlinker -soname=EXRTranslator
 
 #	Specify the version of this binary. Example:
 #		-app 3 4 0 d 0 -short 340 -long "340 "`echo -n -e '\302\251'`"1999 GNU GPL"

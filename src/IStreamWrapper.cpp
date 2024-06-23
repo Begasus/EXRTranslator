@@ -29,7 +29,7 @@ IStreamWrapper::read(char c[/*n*/], int n)
 }
 
 
-uint64_t
+Int64
 IStreamWrapper::tellg()
 {
 	return fStream.Position();
@@ -37,7 +37,7 @@ IStreamWrapper::tellg()
 
 
 void
-IStreamWrapper::seekg(uint64_t pos)
+IStreamWrapper::seekg(Int64 pos)
 {
 	fStream.Seek(pos, SEEK_SET);
 }

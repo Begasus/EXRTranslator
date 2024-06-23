@@ -65,7 +65,7 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS = be Iex IlmThread Imath OpenEXR OpenEXRUtil \
+LIBS = be Half IlmImf IlmImfUtil Iex IexMath IlmThread Imath \
 	translation textencoding localestub $(STDCPPLIBS)
 
 #	Specify additional paths to directories following the standard libXXX.so

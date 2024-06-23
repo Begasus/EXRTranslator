@@ -16,7 +16,7 @@ using namespace std;
 float
 knee(double x, double f)
 {
-	return float (log (x * f + 1) / f);
+	return float (Imath::Math<double>::log (x * f + 1) / f);
 }
 
 
@@ -54,12 +54,12 @@ Gamma::Gamma(float gamma,
 	float kneeHigh)
 :
 	g (gamma),
-	m (pow(2, exposure + 2.47393)),
+	m (Imath::Math<float>::pow(2, exposure + 2.47393)),
 	d (defog),
-	kl (pow(2, kneeLow)),
-	f (findKneeF (pow(2, kneeHigh) - kl,
-		pow(2, 3.5) - kl)),
-	s (255.0 * pow(2, -3.5 * g))
+	kl (Imath::Math<float>::pow(2, kneeLow)),
+	f (findKneeF (Imath::Math<float>::pow(2, kneeHigh) - kl, 
+		Imath::Math<float>::pow(2, 3.5) - kl)),
+	s (255.0 * Imath::Math<float>::pow(2, -3.5 * g))
 {
 }
 
@@ -90,7 +90,7 @@ Gamma::operator() (half h)
 	// Gamma
 	//
 	
-	x = pow (x, g);
+	x = Imath::Math<float>::pow (x, g);
 	
 	//
 	// Scale and clamp

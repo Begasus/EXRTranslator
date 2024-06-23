@@ -18,8 +18,8 @@ class IStreamWrapper : public IStream {
 		virtual ~IStreamWrapper();
 
 		virtual bool        read(char c[/*n*/], int n);
-		virtual uint64_t    tellg();
-		virtual void        seekg(uint64_t pos);
+		virtual Int64       tellg();
+		virtual void        seekg(Int64 pos);
 		
 	private:
 		StreamBuffer fStream;
